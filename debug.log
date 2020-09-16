@@ -1,0 +1,9 @@
+[0916/171206.794:ERROR:file_io_win.cc(162)] CreateFile C:\Users\Ray\AppData\Local\Temp\chromedp-runner011936151\Crashpad\settings.dat: ╰参тぃ﹚隔畖 (0x3)
+[0916/171206.796:ERROR:file_io_win.cc(171)] CreateFile C:\Users\Ray\AppData\Local\Temp\chromedp-runner011936151\Crashpad\reports\69887adc-1b41-44e9-ab16-a4588812c456.dmp: ╰参тぃ﹚隔畖 (0x3)
+[0916/171206.796:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed
+[0916/172536.731:ERROR:file_io_win.cc(162)] CreateFile C:\Users\Ray\AppData\Local\Temp\chromedp-runner829415323\Crashpad\settings.dat: ╰参тぃ﹚隔畖 (0x3)
+[0916/172536.731:ERROR:file_io_win.cc(171)] CreateFile C:\Users\Ray\AppData\Local\Temp\chromedp-runner829415323\Crashpad\reports\28b7d578-adfd-41d5-ab2e-779a38e30265.dmp: ╰参тぃ﹚隔畖 (0x3)
+[0916/172536.731:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed
+[0916/173520.299:ERROR:file_io_win.cc(162)] CreateFile C:\Users\Ray\AppData\Local\Temp\chromedp-runner255309151\Crashpad\settings.dat: ╰参тぃ﹚隔畖 (0x3)
+[0916/173520.300:ERROR:file_io_win.cc(171)] CreateFile C:\Users\Ray\AppData\Local\Temp\chromedp-runner255309151\Crashpad\reports\1a45721c-0252-41c9-96dc-96518fa15d7a.dmp: ╰参тぃ﹚隔畖 (0x3)
+[0916/173520.300:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed
