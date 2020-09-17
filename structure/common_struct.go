@@ -1,12 +1,12 @@
 package structure
 
 type PriceAndVolumeST struct {
-	Mkt  string `json:"mkt"`
-	ID   string `json:"id"`
-	Perd string `json:"perd"`
-	Type string `json:"type"`
-	Mem  string `json:"mem"`
-	Tick []Tick `json:"tick"`
+	Mkt  string      `json:"mkt"`
+	ID   string      `json:"id"`
+	Perd string      `json:"perd"`
+	Type string      `json:"type"`
+	Mem  interface{} `json:"mem"`
+	Tick []Tick      `json:"tick"`
 }
 
 type Tick struct {

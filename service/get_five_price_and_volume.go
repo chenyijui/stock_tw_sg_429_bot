@@ -19,9 +19,11 @@ func GetFivePriceAndVolume(update TGBotAPI.Update, stockNumberStr string) interf
 	}
 
 	bytes, _ := ioutil.ReadAll(res.Body)
+	i := len(bytes)
+	i2 := bytes[3 : i-1]
 
 	var PriceAndVolumeST Structure.PriceAndVolumeST
-	getErr = Jsoniter.ConfigCompatibleWithStandardLibrary.Unmarshal(bytes, &PriceAndVolumeST)
+	getErr = Jsoniter.ConfigCompatibleWithStandardLibrary.Unmarshal(i2, &PriceAndVolumeST)
 
 	return PriceAndVolumeST
 }
