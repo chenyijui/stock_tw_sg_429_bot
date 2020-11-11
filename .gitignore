@@ -16,7 +16,7 @@ logs/
 # Output of the go coverage tool, specifically when used with LiteIDE
 *.out
 /.env
-/common/const.go
+/define/const.go
 
 /environment/local.toml
 /environment/*/local.toml

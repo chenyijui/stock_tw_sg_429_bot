@@ -9,9 +9,11 @@ import (
 	"time"
 )
 
-func GetTimeNowStockChart(update TGBotAPI.Update, stockNumberStr string) interface{} {
+var res string
 
-	url := Define.STOCK_CHART_API_URL + stockNumberStr
+func GetInvestmentTrustNetBuy() interface{} {
+
+	url := Define.STOCK_INVESTMENT_TRUST_NET_BUY
 
 	var buf []byte
 
@@ -27,9 +29,11 @@ func GetTimeNowStockChart(update TGBotAPI.Update, stockNumberStr string) interfa
 	defer cancel()
 
 	cdpErr := chromedp.Run(ctx,
-		chromedp.EmulateViewport(560, 360, chromedp.EmulateScale(1)),
+		//chromedp.EmulateViewport(560, 360, chromedp.EmulateScale(1)),
 		chromedp.Navigate(url),
-		chromedp.CaptureScreenshot(&buf),
+		chromedp.Sleep(1*time.Second),
+		//chromedp.CaptureScreenshot(&buf),
+		chromedp.Screenshot("div.report-table_wrapper", &buf, chromedp.ByID),
 	)
 	if cdpErr != nil {
 		log.Fatal(cdpErr)
