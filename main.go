@@ -72,11 +72,12 @@ func main() {
 				go func() {
 					priceAndVolume := Service.GetFivePriceAndVolume(stockNumStr)
 					startPrice := priceAndVolume.Mem["129"].(float64)
-					dealPrice := priceAndVolume.Mem["127"].(float64)
+					dealPrice := priceAndVolume.Mem["125"].(float64)
 					current := "📈"
 					preSymbol := "+"
 					calNumDec := decimal.NewFromFloat(dealPrice).Sub(decimal.NewFromFloat(startPrice))
-					percentDec := decimal.NewFromFloat(dealPrice).Sub(decimal.NewFromFloat(startPrice)).Div(decimal.NewFromFloat(startPrice)).Mul(decimal.NewFromInt(100))
+					percentDec := decimal.NewFromFloat(dealPrice).Sub(decimal.NewFromFloat(startPrice)).Div(decimal.NewFromFloat(startPrice)).Mul(decimal.New(int64(100), 0))
+
 
 					if dealPrice < startPrice {
 						current = "📉"
