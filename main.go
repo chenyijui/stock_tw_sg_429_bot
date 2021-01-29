@@ -164,9 +164,9 @@ func handleChart(update botAPI.Update, bot *botAPI.BotAPI, stockNumStr string, s
 
 func isStockIDValid(stockID string) bool {
 	stockIDStr := strings.Replace(stockID, " ", "", -1)
-	if len(stockIDStr) == 4 {
+	if len(stockIDStr) < 4 {
 		return false
 	}
-	match, _ := regexp.MatchString("/[0-9][0-9][0-9][0-9]/", stockIDStr)
+	match, _ := regexp.MatchString("^/d{4,}$", stockIDStr)
 	return match
 }
