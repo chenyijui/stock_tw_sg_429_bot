@@ -6,12 +6,25 @@ import (
 	TGBotAPI "github.com/go-telegram-bot-api/telegram-bot-api"
 	"log"
 	Define "stock_tw_sg_429_bot/define"
+	eStockType "stock_tw_sg_429_bot/enum/e_stock_type"
 	"time"
 )
 
-func GetTimeNowStockChart(update TGBotAPI.Update, stockNumberStr string) interface{} {
-
-	url := Define.STOCK_CHART_API_URL + stockNumberStr
+func GetTimeNowStockChart(update TGBotAPI.Update, stockNumberStr string, stockType eStockType.StockType) interface{} {
+	var url string
+	var height int64
+	switch stockType {
+	case eStockType.StockChart:
+		{
+			url = Define.STOCK_CHART_API_URL + stockNumberStr
+			height = 360
+		}
+	case eStockType.Candlestick:
+		{
+			url = Define.STOCK_CANDLESTICK_API_URL + stockNumberStr
+			height = 410
+		}
+	}
 
 	var buf []byte
 
@@ -27,7 +40,7 @@ func GetTimeNowStockChart(update TGBotAPI.Update, stockNumberStr string) interfa
 	defer cancel()
 
 	cdpErr := chromedp.Run(ctx,
-		chromedp.EmulateViewport(560, 360, chromedp.EmulateScale(1)),
+		chromedp.EmulateViewport(560, height, chromedp.EmulateScale(1)),
 		chromedp.Navigate(url),
 		chromedp.CaptureScreenshot(&buf),
 	)
